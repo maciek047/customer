@@ -1,0 +1,26 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: customer
+  profiles:
+    active: production
+  datasource:
+    url: ${customer.datasource.url}
+    username: ${customer.datasource.username}
+    password: ${customer.datasource.password}
+    driverClassName: ${customer.datasource.driverClassName}
+  jpa:
+    database: ${customer.jpa.database}
+    show-sql: ${customer.jpa.show-sql}
+    properties:
+      hibernate:
+        dialect: ${customer.jpa.properties.hibernate.dialect}
+        ddl-auto: create-drop
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+application:
+  allow-get-accounts: ${customer.allow-get-accounts}
