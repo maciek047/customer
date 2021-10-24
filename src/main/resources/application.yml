@@ -22,5 +22,16 @@ management:
     web:
       exposure:
         include: '*'
+#eureka:
+#  client: ${eureka-client}
+accounts:
+  ribbon:
+    eureka:
+      enabled: false
+
+    listOfServers: localhost:9999,localhost:9998
 application:
   allow-get-accounts: ${customer.allow-get-accounts}
+feign:
+  hystrix:
+    enabled: false

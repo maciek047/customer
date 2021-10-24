@@ -6,8 +6,8 @@ import com.kodilla.customer.mapper.CustomerMapper;
 import com.kodilla.customer.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -16,10 +16,11 @@ public class CustomerService {
     private final CustomerMapper customerMapper;
 
     @Transactional
-    public CustomerDto fetchCustomerById(int customerId) {
+    public Optional<CustomerDto> fetchCustomerById(long customerId) {
 
-        customerRepository.save(new Customer(1,"firts","last"));
+        customerRepository.save(new Customer(1L,"first","last"));
         System.out.println("c created");
-        return customerMapper.mapToCustomerDto(customerRepository.findCustomerById(customerId));
+        var customerDto = customerMapper.mapToCustomerDto(customerRepository.findCustomerById(customerId));
+        return Optional.of(customerDto);
     }
 }

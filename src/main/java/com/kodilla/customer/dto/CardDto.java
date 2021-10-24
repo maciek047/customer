@@ -5,12 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class CustomerDto {
+@NoArgsConstructor
+@Builder
+public class CardDto {
     private long id;
-    private String firstName;
-    private String lastName;
+    private String cardNumber;
+    private String currency;
+    private BigDecimal availableFunds;
 }

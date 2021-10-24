@@ -1,6 +1,5 @@
 package com.kodilla.customer.controller;
 
-
 import com.kodilla.customer.dto.DbConfigDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
