@@ -36,6 +36,7 @@ class ProductServiceTest {
         //Then
         assertEquals(1, accounts.size());
         assertFalse(accounts.get(0).getNrb().isEmpty());
+        assertEquals(accounts.get(0).getCurrency(), "PLN");
     }
 
     @Test
